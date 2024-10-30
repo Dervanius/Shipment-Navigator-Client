@@ -33,7 +33,7 @@ const ShipmentIdForm = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5000/shipments/id/${shipmentId}`
+        `http://10.5.254.40:7130/shipments/id/${shipmentId}`
       );
       setShipmentData(response.data);
     } catch (err) {
@@ -92,9 +92,9 @@ const ShipmentIdForm = () => {
                   <div className="flex flex-col">
                     <div className=" overflow-x-auto">
                       <div className="min-w-full inline-block align-middle">
-                        <div className="border rounded-lg shadow overflow-hidden dark:border-neutral-700 dark:shadow-gray-900">
-                          <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead className="bg-gray-50 dark:bg-neutral-700">
+                        <div className="border rounded-lg shadow overflow-hidden">
+                          <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                               <tr>
                                 <td className="text-red-700 text-right bg-gray-200 text-3xl col-span-2 py-2 px-4">
                                   {<FaGift />}
@@ -104,12 +104,12 @@ const ShipmentIdForm = () => {
                                 </td>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody className="divide-y divide-gray-200">
                               <tr>
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Shipment Id:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.id}
                                 </td>
                               </tr>
@@ -118,7 +118,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Tracking Number:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.trackingNumber}
                                 </td>
                               </tr>
@@ -127,7 +127,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Barcode:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.barcodes}
                                 </td>
                               </tr>
@@ -136,7 +136,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Additional Barcode:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {!shipmentData.barcodes2 && "N/A"}
                                 </td>
                               </tr>
@@ -145,7 +145,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   External No:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.externalNumber}
                                 </td>
                               </tr>
@@ -154,7 +154,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Manifest:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.manifestRb}
                                 </td>
                               </tr>
@@ -163,7 +163,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   AWB:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.awb}
                                 </td>
                               </tr>
@@ -172,7 +172,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Account No:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.nalog}
                                 </td>
                               </tr>
@@ -181,7 +181,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Masterbox:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.masterBox}
                                 </td>
                               </tr>
@@ -190,7 +190,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Value:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.goodsValue + " RSD"}
                                 </td>
                               </tr>
@@ -199,7 +199,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Weight:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.weight + " g"}
                                 </td>
                               </tr>
@@ -213,9 +213,9 @@ const ShipmentIdForm = () => {
                   <div className="flex flex-col">
                     <div className="-m-1.5 overflow-x-auto">
                       <div className="p-1.5 min-w-full inline-block align-middle">
-                        <div className="border rounded-lg shadow overflow-hidden dark:border-neutral-700 dark:shadow-gray-900">
-                          <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead className="bg-gray-50 dark:bg-neutral-700">
+                        <div className="border rounded-lg shadow overflow-hidden">
+                          <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                               <tr>
                                 <td className="text-red-700 text-right bg-gray-200 text-3xl col-span-2 py-2 px-4">
                                   {<FaUserCircle />}
@@ -225,12 +225,12 @@ const ShipmentIdForm = () => {
                                 </td>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody className="divide-y divide-gray-200">
                               <tr>
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Contact Name:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToContactName}
                                 </td>
                               </tr>
@@ -239,7 +239,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Street:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToStreet1}
                                 </td>
                               </tr>
@@ -248,7 +248,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Number:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToStreet2}
                                 </td>
                               </tr>
@@ -257,7 +257,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Additional info:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToStreet3}
                                 </td>
                               </tr>
@@ -266,7 +266,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   City:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToCity}
                                 </td>
                               </tr>
@@ -275,7 +275,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Postal Code:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.shipToPostalCode}
                                 </td>
                               </tr>
@@ -284,7 +284,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Confirmed Address:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.badAddress ? (
                                     <FaExclamationCircle className="text-2xl text-red-600" />
                                   ) : (
@@ -297,7 +297,7 @@ const ShipmentIdForm = () => {
                                 <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                   Confirmed City:
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {shipmentData.badCity ? (
                                     <FaExclamationCircle className="text-2xl text-red-600" />
                                   ) : (
@@ -321,9 +321,9 @@ const ShipmentIdForm = () => {
                   <div className="flex flex-col">
                     <div className=" overflow-x-auto">
                       <div className="min-w-full inline-block align-middle">
-                        <div className="border rounded-lg shadow overflow-hidden dark:border-neutral-700 dark:shadow-gray-900">
-                          <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead className="bg-gray-50 dark:bg-neutral-700">
+                        <div className="border rounded-lg shadow overflow-hidden">
+                          <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                               <tr>
                                 <td className="text-red-700 text-right bg-gray-200 text-3xl col-span-2 py-2 px-4">
                                   {<FaBinoculars />}
@@ -333,7 +333,7 @@ const ShipmentIdForm = () => {
                                 </td>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody className="divide-y divide-gray-200">
                               {shipmentData.transferaStatuses.length == 0 && (
                                 <tr>
                                   <td
@@ -350,7 +350,7 @@ const ShipmentIdForm = () => {
                                     <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                       {transferaStatus.description}
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                       {new Date(
                                         transferaStatus.eventDate
                                       ).toLocaleString("sr-RS", {
@@ -370,9 +370,9 @@ const ShipmentIdForm = () => {
                   <div className="flex flex-col">
                     <div className="-m-1.5 overflow-x-auto">
                       <div className="p-1.5 min-w-full inline-block align-middle">
-                        <div className="border rounded-lg shadow overflow-hidden dark:border-neutral-700 dark:shadow-gray-900">
-                          <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead className="bg-gray-50 dark:bg-neutral-700">
+                        <div className="border rounded-lg shadow overflow-hidden">
+                          <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                               <tr>
                                 <td className="text-red-700 text-right bg-gray-200 text-3xl col-span-2 py-2 px-4">
                                   {<FaBinoculars />}
@@ -382,7 +382,7 @@ const ShipmentIdForm = () => {
                                 </td>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody className="divide-y divide-gray-200">
                               {shipmentData.courierStatuses.length == 0 && (
                                 <tr>
                                   <td
@@ -399,7 +399,7 @@ const ShipmentIdForm = () => {
                                     <td className="w-1/3 px-6 py-3 text-xs text-white uppercase bg-red-700">
                                       {courierStatus.name}
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                       {new Date(
                                         courierStatus.eventDate
                                       ).toLocaleString("sr-RS", {

@@ -28,7 +28,7 @@ const ShipmentManifestForm = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5000/shipments/manifest/${manifest}`
+        `http://10.5.254.40:7130/shipments/manifest/${manifest}`
       );
       setShipmentData(response.data);
     } catch (err) {
@@ -83,8 +83,8 @@ const ShipmentManifestForm = () => {
           <>
             <section className="py-4">
               <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-3/4 mx-auto text-sm text-left text-center text-red-100 dark:text-red-100">
-                  <thead className="text-xs text-white uppercase bg-red-600 dark:text-white">
+                <table className="w-3/4 mx-auto text-sm text-left text-center text-red-100">
+                  <thead className="text-xs text-white uppercase bg-red-600">
                     <tr>
                       <th scope="col" className="px-6 py-3">
                         Id
@@ -112,7 +112,7 @@ const ShipmentManifestForm = () => {
                       >
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium font-semibold text-gray-800 whitespace-nowrap dark:text-blue-100"
+                          className="px-6 py-4 font-medium font-semibold text-black whitespace-nowrap"
                         >
                           {item.id}
                         </th>
@@ -132,7 +132,7 @@ const ShipmentManifestForm = () => {
                           <Link to={`/${item.id}`}>
                             <button
                               type="button"
-                              className="text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-lg px-5 py-1.5 me-2  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                              className="text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-lg px-5 py-1.5 me-2"
                             >
                               <FaInfoCircle />
                             </button>
