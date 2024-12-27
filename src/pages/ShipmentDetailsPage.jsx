@@ -19,7 +19,7 @@ const ShipmentDetailsPage = () => {
       try {
         //const res = await fetch(`http://10.5.254.40:7130/shipments/id/${id}`);
         //const res = await fetch(`http://localhost:5000/shipments/id/${id}`);
-        const res = await fetch(`/api/shipments/id/${id}`);
+        const res = await fetch(`http://10.5.254.40:7131/shipments/id/${id}`);
         const data = await res.json();
         console.log(data);
         setShipment(data);
@@ -36,9 +36,9 @@ const ShipmentDetailsPage = () => {
     <Spinner />
   ) : (
     <>
-      <section className="py-4">
+      <section className="py-4 mt-5">
         <div className="container-xl lg:container m-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg mt-5">
             <div className="flex flex-col">
               <div className=" overflow-x-auto">
                 <div className="min-w-full inline-block align-middle">

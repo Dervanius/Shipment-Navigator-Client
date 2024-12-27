@@ -35,7 +35,7 @@ const ShipmentIdForm = () => {
       const response = await axios.get(
         //`http://10.5.254.40:7130/shipments/id/${shipmentId}`
         //`http://localhost:5000/shipments/id/${shipmentId}`
-        `/api/shipments/id/${shipmentId}`
+        `http://10.5.254.40:7131/shipments/id/${shipmentId}`
       );
       setShipmentData(response.data);
     } catch (err) {
@@ -47,7 +47,7 @@ const ShipmentIdForm = () => {
   return (
     <>
       <section>
-        <div className="container m-auto max-w-2xl py-12">
+        <div className="container m-auto max-w-2xl py-12 mt-5">
           <div className="bg-gray-200 px-9 py-4 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={handleFormSubmit}>
               <h2 className="text-3xl text-center font-semibold mb-6">
