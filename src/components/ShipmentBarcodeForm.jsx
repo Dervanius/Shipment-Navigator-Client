@@ -33,7 +33,9 @@ const ShipmentBarcodeForm = () => {
 
     try {
       const response = await axios.get(
-        `http://10.5.254.40:7130/shipments/barcode/${barcode}`
+        //`http://10.5.254.40:7130/shipments/barcode/${barcode}`
+        //`http://localhost:5000/shipments/barcode/${barcode}`
+        `/api/shipments/barcode/${barcode}`
       );
       setShipmentData(response.data);
     } catch (err) {

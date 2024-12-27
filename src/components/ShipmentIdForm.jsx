@@ -33,7 +33,9 @@ const ShipmentIdForm = () => {
 
     try {
       const response = await axios.get(
-        `http://10.5.254.40:7130/shipments/id/${shipmentId}`
+        //`http://10.5.254.40:7130/shipments/id/${shipmentId}`
+        //`http://localhost:5000/shipments/id/${shipmentId}`
+        `/api/shipments/id/${shipmentId}`
       );
       setShipmentData(response.data);
     } catch (err) {
