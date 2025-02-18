@@ -27,6 +27,37 @@ const HomeCards = () => {
               Search
             </Link>
           </Card>
+
+          <Card bg="bg-red-500">
+            <h2 className="text-2xl font-bold">
+              Search By Alternative Barcode
+            </h2>
+            <p className="mt-2 mb-4">
+              Find the shipment by Alternative Barcode, useful for foreign
+              courier services shipments.
+            </p>
+            <Link
+              to="/searchByAltBarcode"
+              className="inline-block bg-red-100 text-dark rounded-lg px-4 py-2 hover:bg-red-600"
+            >
+              Search
+            </Link>
+          </Card>
+
+          <Card bg="bg-gray-700">
+            <h2 className="text-2xl font-bold text-white">
+              Search By Tracking Number
+            </h2>
+            <p className="mt-2 mb-4 text-white">
+              Find the shipment using its Tracking Number
+            </p>
+            <Link
+              to="/searchByTrackingNo"
+              className="inline-block bg-gray-600 text-white rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-black"
+            >
+              Search
+            </Link>
+          </Card>
         </div>
       </div>
     </section>

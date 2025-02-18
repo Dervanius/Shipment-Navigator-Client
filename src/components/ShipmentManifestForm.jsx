@@ -29,7 +29,11 @@ const ShipmentManifestForm = () => {
     try {
       const response = await axios.get(
         //`http://10.5.254.40:7130/shipments/manifest/${manifest}`
+
+        //Test
         //`http://localhost:5000/shipments/manifest/${manifest}`
+
+        //Production
         `http://10.5.254.40:7131/shipments/manifest/${manifest}`
       );
       setShipmentData(response.data);

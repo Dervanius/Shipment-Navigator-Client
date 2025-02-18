@@ -8,6 +8,8 @@ import HomePage from "./pages/HomePage";
 import MainLayout from "./layouts/MainLayout";
 import SearchByIdPage from "./pages/SearchByIdPage";
 import SearchByBarcodePage from "./pages/SearchByBarcodePage";
+import SearchByAltBarcodePage from "./pages/SearchByAltBarcodePage";
+import SearchByTrackingNoPage from "./pages/SearchByTrackingNoPage";
 import SearchByManifestPage from "./pages/SearchByManifestPage";
 import ShipmentDetailsPage from "./pages/ShipmentDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -19,6 +21,14 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/searchById" element={<SearchByIdPage />} />
         <Route path="/searchByBarcode" element={<SearchByBarcodePage />} />
+        <Route
+          path="/searchByAltBarcode"
+          element={<SearchByAltBarcodePage />}
+        />
+        <Route
+          path="/searchByTrackingNo"
+          element={<SearchByTrackingNoPage />}
+        />
         <Route path="/searchByManifest" element={<SearchByManifestPage />} />
         <Route path="/:id" element={<ShipmentDetailsPage />} />
         <Route path="/*" element={<NotFoundPage />} />

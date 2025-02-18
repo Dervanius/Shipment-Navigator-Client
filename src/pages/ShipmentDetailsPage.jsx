@@ -18,8 +18,13 @@ const ShipmentDetailsPage = () => {
     const fetchShipment = async () => {
       try {
         //const res = await fetch(`http://10.5.254.40:7130/shipments/id/${id}`);
+
+        //Test
         //const res = await fetch(`http://localhost:5000/shipments/id/${id}`);
+
+        //Production
         const res = await fetch(`http://10.5.254.40:7131/shipments/id/${id}`);
+
         const data = await res.json();
         console.log(data);
         setShipment(data);
@@ -85,6 +90,7 @@ const ShipmentDetailsPage = () => {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                             {!shipment.barcodes2 && "N/A"}
+                            {shipment.barcodes2}
                           </td>
                         </tr>
                         <tr>

@@ -34,7 +34,11 @@ const ShipmentIdForm = () => {
     try {
       const response = await axios.get(
         //`http://10.5.254.40:7130/shipments/id/${shipmentId}`
+
+        //Test
         //`http://localhost:5000/shipments/id/${shipmentId}`
+
+        //Production
         `http://10.5.254.40:7131/shipments/id/${shipmentId}`
       );
       setShipmentData(response.data);
@@ -140,6 +144,7 @@ const ShipmentIdForm = () => {
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-black">
                                   {!shipmentData.barcodes2 && "N/A"}
+                                  {shipmentData.barcodes2}
                                 </td>
                               </tr>
 

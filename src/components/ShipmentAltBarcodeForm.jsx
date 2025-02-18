@@ -9,14 +9,14 @@ import {
 } from "react-icons/fa";
 import Spinner from "./Spinner";
 
-const ShipmentBarcodeForm = () => {
-  const [barcode, setBarcode] = useState("");
+const ShipmentAltBarcodeForm = () => {
+  const [barcode2, setBarcode2] = useState("");
   const [shipmentData, setShipmentData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
-    setBarcode(e.target.value);
+    setBarcode2(e.target.value);
   };
 
   const handleFormSubmit = async (e) => {
@@ -24,8 +24,8 @@ const ShipmentBarcodeForm = () => {
     setError("");
     setShipmentData(null);
 
-    if (!barcode) {
-      setError("Please enter a Shipment Barcode");
+    if (!barcode2) {
+      setError("Please enter a Shipment Alternative Barcode");
       return;
     }
 
@@ -35,10 +35,10 @@ const ShipmentBarcodeForm = () => {
       const response = await axios.get(
         //`http://10.5.254.40:7130/shipments/barcode/${barcode}`
         //Test
-        //`http://localhost:5000/shipments/barcode/${barcode}`
+        //`http://localhost:5000/shipments/barcode2/${barcode2}`
 
         //Production
-        `http://10.5.254.40:7131/shipments/barcode/${barcode}`
+        `http://10.5.254.40:7131/shipments/barcode2/${barcode2}`
       );
       setShipmentData(response.data);
     } catch (err) {
@@ -54,18 +54,18 @@ const ShipmentBarcodeForm = () => {
           <div className="bg-gray-200 px-9 py-4 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={handleFormSubmit}>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Search Shipment by Barcode
+                Search Shipment by Alternative Barcode
               </h2>
 
               <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
-                  Enter Shipment Barcode
+                  Enter Shipment Alternative Barcode
                 </label>
                 <input
                   type="text"
-                  placeholder="eg. PT004486089RS"
+                  placeholder="eg. 68800151182054"
                   className="border rounded w-full py-2 px-3 mb-2"
-                  value={barcode}
+                  value={barcode2}
                   onChange={handleInputChange}
                 />
               </div>
@@ -431,4 +431,4 @@ const ShipmentBarcodeForm = () => {
     </>
   );
 };
-export default ShipmentBarcodeForm;
+export default ShipmentAltBarcodeForm;
